@@ -37,9 +37,11 @@
 
     // Add your code here
     function createRectangle(xC, yC, h, w, color) {
-
+      ctx.fillStyle = color;
+      ctx.fillRect(xC, yC, h, w);
     }
 
+    createRectangle(x, y, width, height, color);
     // Don't edit the code below here!
 
     const section = document.querySelector("section");
