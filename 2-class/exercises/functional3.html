@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Functions: Task 3</title>
     <style>
       p {
@@ -17,25 +17,49 @@
   </head>
 
   <body>
-
-    <section class="preview">
-
-
-
-    </section>
-
+    <section class="preview"></section>
   </body>
   <script>
-    const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada']
-    const para = document.createElement('p');
+    const names = [
+      "Chris",
+      "Li Kang",
+      "Anne",
+      "Francesca",
+      "Mustafa",
+      "Tina",
+      "Bert",
+      "Jada",
+    ];
+    const para = document.createElement("p");
 
     // Add your code here
+    function random(lowerBound, upperBound) {
+      const randomNumber = Math.floor(
+        Math.random() * (upperBound - lowerBound) + lowerBound
+      );
+
+      return randomNumber;
+
+      // this code will generate numbers BETWEEN the given range.
+      // i.e. if the range is (5, 10), then it will generate 6 to 9.
+
+      // if we add 1 in the difference of both limits, we can get
+      // numbers including those boundaries.
+      // Math.random() * (upperBound - lowerBound + 1) + lowerBound;
+    }
+
+    function chooseName(random, nameArr) {
+      const randomName = nameArr[random(0, nameArr.length)];
+      return randomName;
+    }
+
+    para.textContent = chooseName(random, names);
+
+    console.log("random number:", random(5, 10));
 
     // Don't edit the code below here!
-
-    const section = document.querySelector('section');
+    const section = document.querySelector("section");
 
     section.appendChild(para);
   </script>
-
 </html>
